@@ -83,7 +83,7 @@ class net:
             y_pre = tf.nn.softmax(tf.matmul(h_fc1, w_fc2) + b_fc2, name = 'out')
 
         return y_pre
-
+    
     def data_pre_train(self, file):
         with tf.gfile.Open(data_dir + file, 'rb') as rf:
             bits = rf.read()
@@ -106,7 +106,7 @@ class net:
             res[i][data[i][0]] = 1
         print('train data shape: ', res.shape)
         return res
-
+    
     def data_pre_test(self, file):
         with tf.gfile.Open(data_dir + file, 'rb') as rf:
             bits = rf.read()
